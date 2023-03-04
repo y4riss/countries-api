@@ -18,7 +18,7 @@ const App = () => {
           setError('');
         })
         .catch((err) => {
-          setError('No matches..');
+          setError(err.message);
         });
     }
   };

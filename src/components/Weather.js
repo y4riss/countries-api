@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const Weather = ({ city }) => {
   const [weatherInfo, setWeatherInfo] = useState(null);
-  const d = new Date();
+  let date = null;
   const days = [
     'Sunday',
     'Monday',
@@ -22,17 +22,18 @@ const Weather = ({ city }) => {
         `${weather_url}?q=${city}&appid=${key}&units=metric`
       );
 
-      d.setSeconds(d.getSeconds() + res.data.timezone - 3600);
-      setWeatherInfo(res.data);
+      const date = new Date();
+      date.setSeconds(date.getSeconds() + res.data.timezone - 3600);
+      setWeatherInfo({...res.data,date});
     };
-    getWeather();
+   getWeather();
   }, []);
 
   if (weatherInfo) {
     return (
       <div>
         <p><span>temp : </span>{weatherInfo.main.temp} °C</p>
-        <p><span>Current time : </span>{`${days[d.getDay()]} - ${d.toLocaleString()}`}</p>
+        <p><span>Current time : </span>{`${days[weatherInfo.date.getDay()]} - ${weatherInfo.date.toLocaleString()}`}</p>
       </div>
     );
   }
