@@ -9,7 +9,7 @@ const Country =  ({country}) => {
         <div className="country">
             <div className="country-name">
                 <p>{country.name.common}</p>
-                <button onClick={()=>setClick(!click)}>{click? 'hide' : 'show'}</button>
+                <button onClick={()=>setClick(!click)}>{click? 'Hide details' : 'Show details'}</button>
             </div>
             <Details country={country} clicked={click}></Details>
         </div>

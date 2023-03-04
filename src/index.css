@@ -103,9 +103,17 @@ select {
     outline : none;
     border : none;
     border-radius: 4px;
-    background-color: rgb(242, 224, 59);
+    background-color:rgb(255, 241, 113);
     padding : .5rem;
 
+}
+
+.country button:hover{
+    background-color:rgb(252, 234, 66);
+}
+
+.country button:active{
+    background-color:rgb(255, 241, 113);
 }
 .country-name{
     width: 100%;
