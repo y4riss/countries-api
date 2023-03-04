@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import Search from './components/Search';
+import Countries from './components/Countries';
+import countryService from './services/countryService';
+const App = () => {
+  const [searchInput, setSearchInput] = useState('');
+  const [countries, setCountries] = useState(null);
+  const [error, setError] = useState('');
 
-function App() {
+  const handleInput = (e) => {
+    const val = e.target.value.trim();
+    console.log(`.${val}.`);
+    if (!val.match(/^\s*$/)) {
+      countryService
+        .getCountries(val)
+        .then((r) => {
+          setCountries(r.data);
+          setError('');
+        })
+        .catch((err) => {
+          setError('No matches..');
+        });
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Search handleInput={handleInput}></Search>
+      <Countries err={error} countries={countries}></Countries>
     </div>
   );
-}
+};
 
 export default App;
