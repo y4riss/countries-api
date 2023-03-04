@@ -8,6 +8,8 @@ const getCountries =  (name) => {
     return axios.get(`${url}/${name}`)
 }
 
+
+
 export default {
-    getCountries
+    getCountries,
 }

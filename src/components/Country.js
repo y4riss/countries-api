@@ -7,7 +7,7 @@ const Country =  ({country}) => {
    const [click,setClick] = useState(false);
     return (
         <div>
-            <p>{country.name.official}</p>
+            <p>{country.name.common}</p>
             <button onClick={()=>setClick(!click)}>{click? 'hide' : 'show'}</button>
             <Details country={country} clicked={click}></Details>
         </div>
