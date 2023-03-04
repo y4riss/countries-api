@@ -9,7 +9,8 @@ const App = () => {
 
   const handleInput = (e) => {
     const val = e.target.value.trim();
-    console.log(`.${val}.`);
+    setCountries(null);
+
     if (!val.match(/^\s*$/)) {
       countryService
         .getCountries(val)
