@@ -31,8 +31,8 @@ const Weather = ({ city }) => {
   if (weatherInfo) {
     return (
       <div>
-        <p>temp : {weatherInfo.main.temp} °C</p>
-        <p>Current time : {`${days[d.getDay()]} - ${d.toLocaleString()}`}</p>
+        <p><span>temp : </span>{weatherInfo.main.temp} °C</p>
+        <p><span>Current time : </span>{`${days[d.getDay()]} - ${d.toLocaleString()}`}</p>
       </div>
     );
   }

@@ -1,12 +1,10 @@
 
-
 const Search = ({handleInput}) => {
 
 
     return(
-        <div>
-            <label>Find countries</label>
-            <input onChange={handleInput} type="text" />
+        <div className="search">
+            <input onChange={handleInput} type="text" placeholder="Find countries..."/>
         </div>
     )
 

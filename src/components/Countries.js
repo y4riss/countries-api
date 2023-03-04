@@ -5,18 +5,18 @@ const Countries = ({err,countries})=>{
 
     if (err)
         return (
-            <div>{err}</div>
+            <div className="error">{err}</div>
         )
     if (!countries)
     {
         return (
-            <div>look for a country...</div>
+            <div className="error">look for a country...</div>
         )
     }
     if (countries.length > 10)
     {
         return (
-            <div>Too many matches...</div>
+            <div className="error">Too many matches...</div>
         )
     }
     {

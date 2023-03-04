@@ -23,9 +23,11 @@ const App = () => {
     }
   };
   return (
-    <div>
+    <div className='app'>
       <Search handleInput={handleInput}></Search>
+      <div className='countries'>
       <Countries err={error} countries={countries}></Countries>
+      </div>
     </div>
   );
 };

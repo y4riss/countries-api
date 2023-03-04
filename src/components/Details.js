@@ -6,10 +6,13 @@ const Details = ({country,clicked}) => {
     {
 
         return (
-            <div>
-                <p>Official name : {country.name.official} </p>
-                <p>Capital : {country.capital[0]} </p>
-                <p>Region : {country.region}</p>
+            <div className="details">
+                <div style={{display:"flex",gap:"10px"}}>
+                <p><span>Official name : </span>{country.name.official} </p>
+                <img src={country.flags.png} ></img>
+                </div>
+                <p><span>Capital : </span>{country.capital[0]} </p>
+                <p><span>Region : </span>{country.region}</p>
                 <h4>Currencies : </h4>
                 <ul>
                     {Object.keys(country.currencies).map((k,i)=>(
@@ -22,7 +25,6 @@ const Details = ({country,clicked}) => {
                         <li key={i}>{country.languages[k]}</li>
                     ))}
                 </ul>
-                <img src={country.flags.png} ></img>
                 <h4>Weather : </h4>
                 <Weather city={country.capital[0]} ></Weather>
             </div>

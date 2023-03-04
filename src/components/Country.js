@@ -6,9 +6,11 @@ const Country =  ({country}) => {
 
    const [click,setClick] = useState(false);
     return (
-        <div>
-            <p>{country.name.common}</p>
-            <button onClick={()=>setClick(!click)}>{click? 'hide' : 'show'}</button>
+        <div className="country">
+            <div className="country-name">
+                <p>{country.name.common}</p>
+                <button onClick={()=>setClick(!click)}>{click? 'hide' : 'show'}</button>
+            </div>
             <Details country={country} clicked={click}></Details>
         </div>
     )
