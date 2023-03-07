@@ -1,6 +1,6 @@
 # Country API Application using React
 
-This is a simple application that uses a public REST API to fetch and display data about various countries, it also fetches the weather using https://openweathermap.org/. The application is built using React framework and it is designed to help beginners learn how to fetch data from an API and display it using React components.
+This is a simple application that uses a public REST API https://restcountries.com/ to fetch and display data about various countries, it also fetches the weather using https://openweathermap.org/. The application is built using React framework and it is designed to help beginners learn how to fetch data from an API and display it using React components.
 
 ## Features
 The Small Country API Application has the following features:
